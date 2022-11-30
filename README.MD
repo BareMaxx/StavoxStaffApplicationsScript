@@ -11,6 +11,10 @@ The script opens the page with the applications, and then one by one opens the a
 
 This is then inserted into the markdown file in a table format. To use the table in eg. Google Docs, open the markdown document in a markdown viewer and select the generated table into the document.
 
+Example of the document opened in a markdown viewer:
+<br>
+![Document example](https://i.imgur.com/EqWZ8zF.png)
+
 ## Requirements
 
 -   Python
