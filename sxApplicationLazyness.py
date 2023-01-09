@@ -51,9 +51,6 @@ def formatter(applications):
 def fetchApplications():
 	for i in range(1, pages+1):
 		driver.get("https://stavox.dk/forums/forum/5-staffans%C3%B8gninger-%C3%A5bne/?page="+str(i))
-		applications1 = WebDriverWait(driver, 10).until(
-			EC.presence_of_element_located((By.XPATH, '/html/body/main/div/div/div/div[3]/div/ol'))
-		)
 		list1 = driver.find_element(By.XPATH,'/html/body/main/div/div/div/div[3]/div/ol')
 		elements = list1.find_elements(By.CSS_SELECTOR, "li > div > h4 > span > a")
 		sleep(2)
@@ -73,7 +70,6 @@ numOfApplications = 0
 for application in applications:
 	driver.get(application["link"])
 	sleep(0.5)
-	
 	steamid = WebDriverWait(driver, 10).until(
 		EC.presence_of_element_located((By.XPATH, '/html/body/main/div/div/div/div[3]/div[2]/form/article[1]'))
 	)
@@ -88,4 +84,6 @@ for application in applications:
 	numOfApplications = numOfApplications + 1
 formatter(applications)
 driver.close()
-print(numOfApplications)
+
+print(f'Found a total of {numOfApplications} applications')
+print("Applications has been saved in applications.md")
