@@ -20,4 +20,4 @@ Example of the document opened in a markdown viewer:
 -   Python
 -   Numpy
 -   Selenium
--   chromedriver
+-   chromedriver (Download for your chrome version here https://chromedriver.chromium.org/downloads)
