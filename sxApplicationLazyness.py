@@ -54,7 +54,7 @@ def fetchApplications():
 		applications1 = WebDriverWait(driver, 10).until(
 			EC.presence_of_element_located((By.XPATH, '/html/body/main/div/div/div/div[3]/div/ol'))
 		)
-		list1 = driver.find_element_by_xpath('/html/body/main/div/div/div/div[3]/div/ol')
+		list1 = driver.find_element(By.XPATH,'/html/body/main/div/div/div/div[3]/div/ol')
 		elements = list1.find_elements(By.CSS_SELECTOR, "li > div > h4 > span > a")
 		sleep(2)
 		for element in elements:
