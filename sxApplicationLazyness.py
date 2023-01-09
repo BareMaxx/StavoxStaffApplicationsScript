@@ -18,6 +18,7 @@ driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
 applications = []
 
 def formatter(applications):
+	print("Formatting document")
 	applications = sorted(applications, key=lambda d: d['name']) 
 	file = open("applications.md", "a")
 	file.write("### Hold 1: \n ### Hold 2: \n ### Hold 3: \n")
@@ -35,13 +36,12 @@ def formatter(applications):
 		bad = f'**Daarligt:**  <br><br>'
 		other = f'**Andet:** <br><br>'
 		decision = f'**Beslutning:** <br><br> **Grund (Hvis afvist)**: <br> | \n \n'
-
 		formatted = tableHeader + name + steamid + good + bad + other + decision
-
 		file.write(formatted)
 	file.close()
 
 def fetchApplications():
+	print("Fetching applications")
 	for i in range(1, pages + 1):
 		driver.get("https://stavox.dk/forums/forum/5-staffans%C3%B8gninger-%C3%A5bne/?page=" + str(i))
 		list1 = driver.find_element(By.XPATH,'/html/body/main/div/div/div/div[3]/div/ol')
