@@ -2,9 +2,11 @@ from numpy import array
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from os.path import exists
 import os
 from time import sleep
@@ -14,7 +16,8 @@ if(exists("applications.md")):
 	os.remove("applications.md")
 
 pages = int(input("Hvor mange siders ansøgninger er der? "))
-driver = webdriver.Chrome("chromedriver.exe")
+
+driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
 applications = []
 
 def formatter(applications):

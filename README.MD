@@ -6,7 +6,7 @@ This started as a node project, but I ran into some problems which ment I quickl
 
 ## How?
 
-Currently is this a simple Python script that uses a chromedriver.
+This is currently a simple Python script that uses a chromedriver.
 The script opens the page with the applications, and then one by one opens the applications and copies the applicant's name, link to application and steamid.
 
 This is then inserted into the markdown file in a table format. To use the table in eg. Google Docs, open the markdown document in a markdown viewer and select the generated table into the document.
@@ -20,4 +20,4 @@ Example of the document opened in a markdown viewer:
 -   Python
 -   Numpy
 -   Selenium
--   chromedriver (Download for your chrome version here https://chromedriver.chromium.org/downloads)
+-   webdriver-manager
