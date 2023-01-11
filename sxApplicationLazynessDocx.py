@@ -19,6 +19,7 @@ if(exists("applications.docx")):
 
 pages = int(input("Hvor mange siders ansøgninger er der? "))
 teams = int(input("Hvor mange hold er der? "))
+docs = input("Vil du bruge Google Docs? (Y/N): ")
 
 driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
 applications = []
@@ -100,8 +101,7 @@ def formatter(applications, teams):
 	for i in range(1, int(teams) + 1):
 		addHeading("HOLD "+str(i)+": ", document)
 	
-	overViewTable = document.add_table(rows = 1, cols = 3)
-	overViewTable.style = 'Table Grid'
+	overViewTable = document.add_table(rows = 1, cols = 3, style ="Table Grid")
 	overViewTableHeads = overViewTable.rows[0].cells
 	
 	run = overViewTableHeads[0].paragraphs[0].add_run("Navn")
@@ -126,8 +126,7 @@ def formatter(applications, teams):
 	document.add_page_break()
 
 	for i, application in enumerate(applications):
-		applicantTable = document.add_table(rows = 1, cols = 1)
-		applicantTable.style = 'Table Grid'
+		applicantTable = document.add_table(rows = 1, cols = 1, style ="Table Grid")
 		applicantTableHeading = applicantTable.rows[0].cells
 		run = applicantTableHeading[0].paragraphs[0].add_run(application["name"])
 		run.bold = True
@@ -193,3 +192,6 @@ printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
 formatter(applications, teams)
 print(f'Found a total of {numOfApplications} applications')
 print("Applications has been saved in applications.docx")
+if(docs.lower() == "y"):
+	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	print("Google Docs: Åben wordfilen og kopier indholdet, og sæt ind i docs. Tabeller virker ikke godt, hvis man bare uploader docx' filen direkte!!!!")
