@@ -10,7 +10,6 @@ from time import sleep
 import re
 import docx
 from docx import Document
-from docx.shared import Pt
 from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
@@ -195,3 +194,5 @@ print("Applications has been saved in applications.docx")
 if(docs.lower() == "y"):
 	print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	print("Google Docs: Åben wordfilen og kopier indholdet, og sæt ind i docs. Tabeller virker ikke godt, hvis man bare uploader docx' filen direkte!!!!")
+	
+print("Du kan nu lukke vinduet (Af en eller anden grund tager det noget tid)")
