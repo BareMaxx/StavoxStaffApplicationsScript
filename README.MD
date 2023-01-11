@@ -16,6 +16,8 @@ Example of the document opened in a markdown viewer:
 ![Document example](https://i.imgur.com/EqWZ8zF.png)
 
 ## Requirements
+
 -   Python
 -   Selenium
 -   webdriver-manager
+-   python-docx
