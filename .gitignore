@@ -1,3 +1,8 @@
 node_modules
 applications.md
 chromedriver.exe
+dist/
+build/
+*.spec
+*.docx
+file_version_info.txt
