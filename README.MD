@@ -1,6 +1,6 @@
 # What is this?
 
-This is a script/application that automates the creation of a document that the Head Of Staff at Stavox can use to take notes and have the links for the applicant ready at hand. The document is a markdown file.
+This is a script/application that automates the creation of a document that the Head Of Staff at Stavox can use to take notes and have the links for the applicant ready at hand. The document is a docx or markdown file.
 
 This started as a node project, but I ran into some problems which ment I quickly had to convert to Python to get the script up and running in time.
 
